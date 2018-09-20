@@ -30,10 +30,23 @@ class XtendRuntime {
 								'''org.eclipse.xtend:org.eclipse.xtend.core:«xtendVersion»''') [
 								force = true
 								exclude(#{'group' -> 'asm'})
+								exclude(#{'group' -> 'org.eclipse.emf'})
 							],
 							project.dependencies.externalModule('''org.xtend:xtend-gradle-lib:«pluginVersion»''') [
 								force = true
 							],
+							project.dependencies.externalModule('''org.eclipse.emf:org.eclipse.emf.ecore:2.12.0''') [
+                            	force = true
+                            ],
+                            project.dependencies.externalModule('''org.eclipse.emf:org.eclipse.emf.common:2.12.0''') [
+                             	force = true
+                            ],
+                            project.dependencies.externalModule('''org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.12.0''') [
+                                force = true
+                            ],
+                            project.dependencies.externalModule('''org.eclipse.emf:org.eclipse.emf.codegen:2.11.0''') [
+                                force = true
+                            ],
 							project.dependencies.externalModule('com.google.inject:guice:4.0-beta4')[]
 						]
 						return project.configurations.detachedConfiguration(dependencies)
